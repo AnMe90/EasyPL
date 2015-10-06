@@ -185,26 +185,3 @@ int main()
 	//waitKey(0);
 	return 0;
 }
-//
-//int main(){
-//
-//const string file = "resources/image/A88888.jpg";
-//cv::Mat src = imread(file);
-////TODO：原plateLocate需要被替换
-//vector<cv::Mat> resultVec;
-//CPlateLocate plate;
-//plate.setDebug(0);
-//plate.setLifemode(false);
-//
-//int result = plate.plateLocate(src, resultVec);
-//if (result == 0) {
-//	size_t num = resultVec.size();
-//	for (size_t j = 0; j < num; j++) {
-//		cv::Mat resultMat = resultVec[j];
-//		imshow("plate_locate", resultMat);
-//		waitKey(0);
-//	}
-//	destroyWindow("plate_locate");
-//}
-//return 0;
-//}
