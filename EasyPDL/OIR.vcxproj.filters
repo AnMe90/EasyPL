@@ -27,6 +27,18 @@
     <ClInclude Include="include\oir\util.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\oir\feature.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oir\plate_judge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oir\svm_train.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oir\batch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\corefunc.cpp">
@@ -39,6 +51,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\plate_judge.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\svm_train.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\area.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\feature.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\batch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

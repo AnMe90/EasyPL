@@ -80,13 +80,22 @@
   <ItemGroup>
     <ClInclude Include="include\oir\area.h" />
     <ClInclude Include="include\oir\arealocate.h" />
+    <ClInclude Include="include\oir\batch.h" />
     <ClInclude Include="include\oir\corefunc.h" />
+    <ClInclude Include="include\oir\feature.h" />
+    <ClInclude Include="include\oir\plate_judge.h" />
+    <ClInclude Include="include\oir\svm_train.h" />
     <ClInclude Include="include\oir\util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\core\area.cpp" />
     <ClCompile Include="src\core\arealocate.cpp" />
+    <ClCompile Include="src\core\batch.cpp" />
     <ClCompile Include="src\core\corefunc.cpp" />
+    <ClCompile Include="src\core\feature.cpp" />
+    <ClCompile Include="src\core\plate_judge.cpp" />
+    <ClCompile Include="src\core\svm_train.cpp" />
     <ClCompile Include="src\core\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -94,7 +94,7 @@ namespace oir {
 		const int color_morph_height = 2;
 
 		// 进行颜色查找
-		colorMatch(src, match_grey, r, true);///修改点
+		colorMatch(src, match_grey, r, false);///修改点
 
 		if (m_debug) {
 			utils::imwrite("resources/image/tmp/match_grey.jpg", match_grey);
@@ -143,8 +143,9 @@ namespace oir {
 
 					//rectangle(Mat(src), cvPoint(aRect.x, aRect.y), cvPoint(aRect.x + aRect.width, aRect.y + aRect.height), color, 2);//安猛新加的
 					//drawContours(Mat(src), contours, -1, color(2), 1, 8);
-					if (tmparea>500)
-					rectangle(Mat(src), Point(aRect.x, aRect.y), Point(aRect.x + aRect.width, aRect.y + aRect.height), color, 2);
+					//画框
+					/*if (tmparea>500)
+					rectangle(Mat(src), Point(aRect.x, aRect.y), Point(aRect.x + aRect.width, aRect.y + aRect.height), color, 2);*/
 					++itc;
 					outRects.push_back(mr);
 					
@@ -214,7 +215,8 @@ namespace oir {
 				
 				Scalar color = Scalar(0, 255, 255);//安猛新加的
 				Rect aRect = boundingRect(*itc);
-				rectangle(Mat(src), Point(aRect.x, aRect.y), Point(aRect.x + aRect.width, aRect.y + aRect.height), color, 2);
+				//画框
+				//rectangle(Mat(src), Point(aRect.x, aRect.y), Point(aRect.x + aRect.width, aRect.y + aRect.height), color, 2);
 				
 				/*cout << "area:" << area << endl;
 				cout << "r:" << r << endl;*/
@@ -969,7 +971,7 @@ namespace oir {
 	int CPlateLocate::plateLocate(Mat src, vector<Mat>& resultVec, int index) {
 		vector<CPlate> all_result_Plates;
 
-		plateColorLocate(src, all_result_Plates, index);
+		//plateColorLocate(src, all_result_Plates, index);
 		plateSobelLocate(src, all_result_Plates, index);
 
 		for (size_t i = 0; i < all_result_Plates.size(); i++) {

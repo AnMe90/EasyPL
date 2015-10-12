@@ -1,34 +1,36 @@
 #include "include/oir/arealocate.h"
+#include "include/oir/batch.h"
+#include "include/oir/svm_train.h"
+#include "include/oir/plate_judge.h"
+
 using namespace oir;
 
-#include <opencv2\opencv.hpp>
-#include <iostream>
-#include <string>
-#include<io.h>
-#include<string.h>
-
-using namespace cv;
-using namespace std;
-
-
-bool get_filelist_from_dir(string path, vector<string>& files)
-{
-	long   hFile = 0;
-	struct _finddata_t fileinfo;
-	files.clear();
-	if ((hFile = _findfirst(path.c_str(), &fileinfo)) != -1)
-	{
-		do
-		{
-			if (!(fileinfo.attrib &  _A_SUBDIR))
-				files.push_back(fileinfo.name);
-		} while (_findnext(hFile, &fileinfo) == 0);
-		_findclose(hFile);
-		return true;
-	}
-	else
-		return false;
-}
+//#include <opencv2\opencv.hpp>
+//#include <iostream>
+//#include <string>
+//#include<io.h>
+//#include<string.h>
+//
+//using namespace cv;
+//using namespace std;
+//bool get_filelist_from_dir(string path, vector<string>& files)
+//{
+//	long   hFile = 0;
+//	struct _finddata_t fileinfo;
+//	files.clear();
+//	if ((hFile = _findfirst(path.c_str(), &fileinfo)) != -1)
+//	{
+//		do
+//		{
+//			if (!(fileinfo.attrib &  _A_SUBDIR))
+//				files.push_back(fileinfo.name);
+//		} while (_findnext(hFile, &fileinfo) == 0);
+//		_findclose(hFile);
+//		return true;
+//	}
+//	else
+//		return false;
+//}
 
 void SSR(IplImage* src, int sigma, int scale)
 {
@@ -80,51 +82,26 @@ void SSR(IplImage* src, int sigma, int scale)
 
 int main()
 {
-	string file_path = "D:/workspace/nocolor/";
+	/*string file_path = "D:/workspace/nocolor/";
 	string search_path = file_path + "*.jpg";
 	vector<string> file_list;
 	if (!get_filelist_from_dir(search_path, file_list))
-		cout << "open file error!" << endl;
+		cout << "open file error!" << endl;*/
+	Batch batchfile;
+	CPlateJudge cplatejudge;
+	
+
+	string file_path = "D:/workspace/nocolor3/";
+	string file_result = "D:/workspace/onlycolor/";
+	vector<string> file_list;
+	file_list=batchfile.CBatch(file_path, file_list);
+	int summ = 0;
 	for (int i = 0; i < file_list.size(); i++)
 	{
 		string image_path = file_path + file_list[i];
 		Mat image = imread(image_path);
-
-		
-
-		//imshow("image", image);
-		/*CPlateLocate PlateLocate;
-		Mat srcgray;
-		vector<Mat> vecRag;
-		int index;*/
-		//int result=PlateLocate.plateLocate(image, vecRag);
-		//colorMatch(image, srcgray, BLUE, true);
-		//size_t num = vecRag.size();
-		
-		//cout <<i<<endl;
-		//colorMatch(image, srcgray, BLUE, true);
-
-		//imwrite(s, image);
-
-		
-
-		/*ss << file_list[i];
-		String s;
-		ss >> s;*/
-		//cout << s;
-		//Mat resultMat = vecRag[j];
-		//imshow("1", resultMat);
-		//imwrite(s, srcgray);
-
-		//string 转 char*
-		//int len = file_list[i].length();
-		//const char* filename;
-		////filename = (char *)malloc((len)*sizeof(char));//len+1
-		//filename = file_list[i].data();
-		//cout << file_list[i]<<endl;
-		////file_list[i].copy(filename, len, 0);
-		//cout <<filename<< endl;
 		stringstream ss(stringstream::in | stringstream::out);
+		
 
 		/////图像增强程序
 		/*IplImage* frog;
@@ -135,53 +112,46 @@ int main()
 		SSR(frog, 30, 2);
 		Mat(frog, false);
 		Mat image1 = frog;*/
-		//imshow("Ipflog", image1);
-		//imwrite(file_list[i], image1);
-
-
 
 		/////定位主程序
-		vector<cv::Mat> resultVec;
+		vector<cv::Mat> resultVec;//疑似车牌
+		vector<cv::Mat> resultVec2;//判断为车牌
 		CPlateLocate plate;
 		plate.setDebug(1);
 		plate.setLifemode(true);
 
-		int result = plate.plateLocate(image, resultVec);
-		imwrite(file_list[i], image);
-
+		int result = plate.plateLocate(image, resultVec2);
+		//imwrite(file_result + file_list[i], image);
+		cplatejudge.plateJudge(resultVec2, resultVec);
 		/////输出每个疑似车牌图块
 		if (result == 0) {
 			size_t num = resultVec.size();
 			
 			cout << num << endl;
+			//if (num==0)
+			//summ +=1;
 			String s;
+			//cout << summ << endl;
 			for (int j = 0; j < num; ++j) {
 				cv::Mat resultMat = resultVec[j];
-				ss << file_list[i] << j<<".jpg";
+				ss <<file_result<< file_list[i] << j << ".jpg";
 				//ss << j<<".jpg";
 				cout << 'S'<<j << endl;
 				
 				ss >> s;
 				
 				//imshow(s, resultMat);
-				//imwrite(s, resultMat);
+				imwrite(s, resultMat);
 				ss.clear();
 				
 				//waitKey(0);
 			}
 			//destroyWindow(s);
 		}
-			
-
-		
-		
-
-		//Mat element2 = getStructuringElement(MORPH_RECT, Size(5, 1));
-		//dilate(candPlate, srcgray, element2);//膨胀
-		//imshow("srcgray", srcgray);
-
 
 	}
+	
 	//waitKey(0);
 	return 0;
 }
+
