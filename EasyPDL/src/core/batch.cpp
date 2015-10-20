@@ -19,21 +19,31 @@ bool get_filelist_from_dir(string path, vector<string>& files)
 	else
 		return false;
 }
+//namespace oir {
+//
+//	vector<string> Batch::CBatch(string file_path,vector<string> file_list ){
+//		//string file_path = "D:/workspace/nocolor/";
+//		string search_path = file_path + "*.jpg";
+//		//vector<string> file_list;
+//		if (!get_filelist_from_dir(search_path, file_list))
+//			cout << "open file error!" << endl;
+//		else return file_list;
+//
+//		
+//	}
+//}
+
+//¼¯ºÏ³ÌÐò
 namespace oir {
 
-	vector<string> Batch::CBatch(string file_path,vector<string> file_list ){
+	vector<string> Batch::CBatch(string &file_path,vector<string> &file_list ){
 		//string file_path = "D:/workspace/nocolor/";
 		string search_path = file_path + "*.jpg";
 		//vector<string> file_list;
 		if (!get_filelist_from_dir(search_path, file_list))
 			cout << "open file error!" << endl;
 		else return file_list;
-		/*for (int i = 0; i < file_list.size(); i++)
-		{
-			string image_path = file_path + file_list[i];
-			Mat image = imread(image_path);
 
-		}*/
 		
 	}
 }

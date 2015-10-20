@@ -31,7 +31,7 @@ namespace oir {
 		int plateJudge(const vector<CPlate>&, vector<CPlate>&);
 
 		//! 车牌判断
-		int plateJudge(const vector<Mat>&, vector<Mat>&);
+		int plateJudge(const vector<Mat>&, vector<Mat>&,int flag);//增加了flag哨兵，判断是否有车牌被识别出来
 
 		//! 车牌判断（一副图像）
 		int plateJudge(const Mat& inMat, int& result);

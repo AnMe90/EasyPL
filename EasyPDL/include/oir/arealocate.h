@@ -61,8 +61,8 @@ namespace oir {
 		//! 未使用函数与代码
 
 		//! 车牌定位
-		int plateLocate(Mat, vector<Mat>&, int = 0);
-
+		int plateLocatecolor(Mat, vector<Mat>&, int = 0);
+		int plateLocatesobel(Mat, vector<Mat>&, int = 0);//新增加的分离的颜色和sobel
 		//! 车牌的尺寸验证
 		bool verifySizes(RotatedRect mr);
 

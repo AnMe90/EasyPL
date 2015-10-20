@@ -1,24 +1,29 @@
-﻿生成启动时间为 2015/10/10 11:12:01。
-     1>项目“D:\workspace\OIR1.3-beta\OIR.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2015/10/20 11:12:05。
+     1>项目“D:\workspace\OIR1.4-beta\OIR.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\core\arealocate.cpp
-         arealocate.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp src\core\worklist.cpp
+         main.cpp
+         worklist.cpp
+     1>src\core\worklist.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+     1>src\core\worklist.cpp(70): warning C4018: “<”: 有符号/无符号不匹配
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\workspace\OIR1.3-beta\Release\OIR.exe" /INCREMENTAL:NO /NOLOGO opencv_calib3d2411.lib opencv_contrib2411.lib opencv_core2411.lib opencv_features2d2411.lib opencv_flann2411.lib opencv_gpu2411.lib opencv_highgui2411.lib opencv_imgproc2411.lib opencv_legacy2411.lib opencv_ml2411.lib opencv_nonfree2411.lib opencv_objdetect2411.lib opencv_ocl2411.lib opencv_photo2411.lib opencv_stitching2411.lib opencv_superres2411.lib opencv_ts2411.lib opencv_video2411.lib opencv_videostab2411.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\workspace\OIR1.3-beta\Release\OIR.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\workspace\OIR1.3-beta\Release\OIR.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\workspace\OIR1.4-beta\Release\OIR.exe" /INCREMENTAL:NO /NOLOGO opencv_calib3d2411.lib opencv_contrib2411.lib opencv_core2411.lib opencv_features2d2411.lib opencv_flann2411.lib opencv_gpu2411.lib opencv_highgui2411.lib opencv_imgproc2411.lib opencv_legacy2411.lib opencv_ml2411.lib opencv_nonfree2411.lib opencv_objdetect2411.lib opencv_ocl2411.lib opencv_photo2411.lib opencv_stitching2411.lib opencv_superres2411.lib opencv_ts2411.lib opencv_video2411.lib opencv_videostab2411.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\workspace\OIR1.4-beta\Release\OIR.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\workspace\OIR1.4-beta\Release\OIR.lib" /MACHINE:X86 /SAFESEH Release\main.obj
          Release\area.obj
          Release\arealocate.obj
          Release\batch.obj
          Release\corefunc.obj
+         Release\enhance_ssr.obj
          Release\feature.obj
          Release\plate_judge.obj
          Release\svm_train.obj
          Release\util.obj
+         Release\worklist.obj
          正在生成代码
-     1>d:\workspace\oir1.3-beta\src\core\batch.cpp(38): warning C4715: “oir::Batch::CBatch”: 不是所有的控件路径都返回值
+     1>d:\workspace\oir1.4-beta\src\core\batch.cpp(48): warning C4715: “oir::Batch::CBatch”: 不是所有的控件路径都返回值
          已完成代码的生成
-         OIR.vcxproj -> D:\workspace\OIR1.3-beta\Release\OIR.exe
-     1>已完成生成项目“D:\workspace\OIR1.3-beta\OIR.vcxproj”(Build 个目标)的操作。
+         OIR.vcxproj -> D:\workspace\OIR1.4-beta\Release\OIR.exe
+     1>已完成生成项目“D:\workspace\OIR1.4-beta\OIR.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:03.31
+已用时间 00:00:04.51

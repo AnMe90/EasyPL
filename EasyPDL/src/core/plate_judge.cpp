@@ -59,17 +59,24 @@ namespace oir {
 	}
 
 	//! 对多幅图像进行SVM判断
-	int CPlateJudge::plateJudge(const vector<Mat>& inVec, vector<Mat>& resultVec) {
+	int CPlateJudge::plateJudge(const vector<Mat>& inVec, vector<Mat>& resultVec,int flag) {
 		int num = inVec.size();
+		flag = 0;
 		for (int j = 0; j < num; j++) {
 			Mat inMat = inVec[j];
 
 			int response = -1;
 			plateJudge(inMat, response);
 
-			if (response == 1) resultVec.push_back(inMat);
+			if (response == 1){
+				resultVec.push_back(inMat);
+				flag++;
+			}
+				
+			
 		}
-		return 0;
+
+		return flag;
 	}
 
 	//! 对多幅车牌进行SVM判断

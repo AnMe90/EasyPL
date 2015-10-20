@@ -21,9 +21,6 @@
     <ClInclude Include="include\oir\area.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\oir\arealocate.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\oir\util.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -39,12 +36,18 @@
     <ClInclude Include="include\oir\batch.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\oir\enhance_ssr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oir\worklist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\oir\arealocate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\corefunc.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\arealocate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\core\util.cpp">
@@ -66,6 +69,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\core\batch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\enhance_ssr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\worklist.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\arealocate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
